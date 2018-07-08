@@ -80,18 +80,23 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# If this is an xterm set the title to user@host:dir
+# If this is an xterm set PS1
 case "$TERM" in
 xterm*|rxvt*)
-    if [ "$color_prompt" = yes ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;129m\]\u\[\e[m\]\[\e[38;5;249m\]@\[\e[m\]\[\e[38;5;99m\]\h\[\e[m\]\[\e[38;5;249m\]:\w\$ '
-    else
-        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    fi
-    
+
+    ps1_git_branch=
     if [ $(isInstalled __git_ps1) == "true" ]; then
-        PS1="$PS1(__git_ps1 ' (%s)')\$ "
+        ps1_git_branch=yes
     fi
+
+    if [ "$color_prompt" = yes ]; then
+        PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;129m\]\u\[\e[m\]\[\e[38;5;246m\]@\[\e[m\]\[\e[38;5;99m\]\h\[\e[m\]\[\e[38;5;246m\]:\w${ps1_git_branch+$(__git_ps1)}\$\[\e[m\]\[\e[38;5;249m\] '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w${ps1_git_branch:+$ps1_git_branch}\$ '
+    fi
+
+    #unset ps1_git_branch
+    
     ;;
 *)
     ;;
