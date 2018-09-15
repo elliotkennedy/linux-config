@@ -8,15 +8,10 @@ case $- in
       *) return;;
 esac
 
-# For stateless systems, e.g. solus, Source default profile
-if [ -f ~/usr/share/defaults/etc/profile ]; then
-    source /usr/share/defaults/etc/profile
-fi
-
 # Functions
 
 function isInstalled() {
-    if ! $1 type &> /dev/null; then
+    if ! type $1 &> /dev/null; then
         echo "false"
     else
         echo "true"
@@ -179,6 +174,10 @@ fi
 
 if [ $(isInstalled helm) == "true" ]; then
     source <(helm completion bash)
+fi
+
+if [ $(isInstalled aws) == "true" ] && [ $(isInstalled aws_completer) == "true" ]; then
+    complete -C 'aws_completer' aws
 fi
 
 # Print a banner
