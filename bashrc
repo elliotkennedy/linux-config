@@ -29,7 +29,8 @@ shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=10000
 
-export VISUAL=less
+export PAGER=less
+export VISUAL=vim
 export EDITOR=vim
 
 # check the window size after each command and, if necessary,
