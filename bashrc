@@ -98,6 +98,9 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Carry over aliases to sudo
+alias sudo='sudo '
+
 unset color_prompt force_color_prompt
 
 # enable color support of ls and also add handy aliases
