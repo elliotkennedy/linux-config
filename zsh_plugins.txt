@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+#
+# antibody bundle < ./zsh_plugins.txt > ~/.zsh_plugins.sh
+# 
+# # ~/.zshrc
+# source ~/.zsh_plugins.sh
+#
+#
+
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+

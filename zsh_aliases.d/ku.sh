@@ -1,0 +1,7 @@
+alias ku='kubectl'
+alias kg='kubectl get'
+alias kgp='kubectl get pod'
+alias kx='kubectl exec -i -t'
+alias kl='kubectl get logs -f'
+alias kd='kubectl describe'
+alias kdp='kubectl describe pod'

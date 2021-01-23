@@ -85,13 +85,14 @@ xterm*|rxvt*)
         ps1_git_branch=yes
     fi
 
-    if [ "$color_prompt" = yes ]; then
-	FG="\[\033[38;5;081m\]"
-	BG="\[\033[38;5;245m\]"
-	AT="\[\033[38;5;245m\]"
-	HCOLOUR="\[\033[38;5;206m\]"
+    if [ "$color_prompt" = yes ]; 
+    then
+	    FG="\[\033[38;5;081m\]"
+	    BG="\[\033[38;5;245m\]"
+	    AT="\[\033[38;5;245m\]"
+	    HCOLOUR="\[\033[38;5;206m\]"
         
-	PS1="${debian_chroot:+($debian_chroot)}${FG}\u${AT}@${HCOLOUR}\h ${BG}\w${ps1_git_branch:+ $(__git_ps1)} ${FG}\$ \[\e[m\]\[\e[38;5;249m\]"
+	    PS1="${debian_chroot:+($debian_chroot)}${FG}\u${AT}@${HCOLOUR}\h ${BG}\w${ps1_git_branch:+ $(__git_ps1)} ${FG}\$ \[\e[m\]\[\e[38;5;249m\]"
 
         unset FG
         unset BG
