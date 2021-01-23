@@ -21,6 +21,13 @@ antibody bundle < ./zsh_plugins.txt > ~/.zsh_plugins.sh
 mkdir -p ~/.vimbackup ~/.vimswp ~/.vimundo
 ```
 
+- Symlink function and alias dirs
+
+```shell
+ln -sri zsh_aliases.d $HOME/.zsh_aliases.d
+ln -sri zsh_functions.d $HOME/.zsh_functions.d
+```
+
 ### Option 1: Symlink setup
 
 ```shell
@@ -28,8 +35,6 @@ ln -sri bashrc $HOME/.bashrc
 ln -sri gitconfig $HOME/.gitconfig
 ln -sri vimrc $HOME/.vimrc
 ln -sri zshrc $HOME/.zshrc
-ln -sri zsh_aliases.d $HOME/.zsh_aliases.d
-ln -sri zsh_functions.d $HOME/.zsh_functions.d
 ```
 
 ### Option 2: Non-symlink setup
