@@ -5,6 +5,8 @@
 [core]
     editor = vim
     autocrlf = input
+[init]
+    defaultBranch = master
 [pull]
     rebase = true
 [rebase]
