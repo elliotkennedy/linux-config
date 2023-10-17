@@ -195,7 +195,7 @@ then
 fi
 
 # Antibody plugin manager
-if [[ -f ~/.zsh_plugins.sh ]];
+if [[ -f ~/.zsh_plugins.zsh ]];
 then
     local use_autosuggestions="true"
     if [[ $use_autosuggestions = "true" ]];
@@ -213,7 +213,7 @@ then
         # ZSH_AUTOSUGGEST_HISTORY_IGNORE="cd *"
         # ZSH_AUTOSUGGEST_COMPLETION_IGNORE="cd *"
     fi
-    source ~/.zsh_plugins.sh
+    source ~/.zsh_plugins.zsh
 fi
 
 # Cleanup

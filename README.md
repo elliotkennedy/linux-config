@@ -6,13 +6,14 @@ A repo for dotfiles and other linux config
 
 - Install [hh](https://github.com/dvorka/hstr)
 
-- Install [antibody](https://github.com/getantibody/antibody) zsh plugin manager and create bundle
+- Install [antidote](https://github.com/mattmc3/antidote) zsh plugin manager and create bundle
 
 ```shell
 # use /usr/bin for solus
-curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
+# todo update to antidote for solus
+# curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
 
-antibody bundle < ./zsh_plugins.txt > ~/.zsh_plugins.sh
+antidote bundle < ./zsh_plugins.txt > ~/.zsh_plugins.zsh
 ```
 
 - Create vim storage dirs

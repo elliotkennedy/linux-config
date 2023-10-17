@@ -1,10 +1,10 @@
 #!/bin/zsh
 
 #
-# antibody bundle < ./zsh_plugins.txt > ~/.zsh_plugins.sh
+# antidote bundle < ./zsh_plugins.txt > ~/.zsh_plugins.zsh
 # 
 # # ~/.zshrc
-# source ~/.zsh_plugins.sh
+# source ~/.zsh_plugins.zsh
 #
 #
 
