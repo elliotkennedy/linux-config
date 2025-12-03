@@ -15,7 +15,7 @@ function logDebug() {
     if [[ $ZSHRC_LOG_LEVEL = "DEBUG" ]]; then
        echo $1
     fi
-} 
+}
 
 setopt autocd extendedglob nomatch notify share_history hist_ignore_all_dups HIST_IGNORE_SPACE COMPLETE_ALIASES PROMPT_SUBST
 
@@ -79,13 +79,13 @@ if [ -d ~/.zsh_functions.d ]; then
     done
 fi
 
-# List of commands to exclude from session history 
+# List of commands to exclude from session history
 # Most commands should be blacklisted in ~/.hstr_blacklist or ~/.hh_blacklist
 HIST_IGNORE_COMMANDS=()
 
 # set a colour prompt
 case "$TERM" in
-    xterm-*color) 
+    xterm-*color)
         colour_prompt=yes
         ;;
     *)
@@ -125,7 +125,7 @@ xterm*|rxvt*)
         print -Pn "\e]0;%n@%M: %~\a" # set title
     }
 
-    preexec() { 
+    preexec() {
         print -Pn "\e]0;%# $1 | %n@%M: %~\a" # set title with executing command
     }
 
@@ -148,6 +148,8 @@ esac
 export PAGER=less
 export VISUAL=vim
 export EDITOR=vim
+# grep highlight magenta
+export GREP_COLORS="ms=1;38;5;206"
 
 # History
 export HISTFILE=~/.zsh_history
@@ -155,14 +157,14 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 # hstr configuration
-if [[ $(isInstalled hstr) = "true" ]]; 
+if [[ $(isInstalled hstr) = "true" ]];
 then
     # Some distros symlink hh
     if [[ $(isInstalled hh) = "false" ]]; then
         alias hh='hstr'
     fi
     export HSTR_CONFIG=hicolor        # get more colors
-    #bindkey -s "\C-r" "\eqhstr\n"     # bind hstr to Ctrl-r 
+    #bindkey -s "\C-r" "\eqhstr\n"     # bind hstr to Ctrl-r
     bindkey -s "\C-r" "\C-a hh -- \C-j" # preceding ' ' + setop HIST_IGNORE_SPACE will ensure this is ignored from the history
     HIST_IGNORE_COMMANDS+=('hstr' 'hh')
     export HSTR_CONFIG="$HSTR_CONFIG blacklist"
@@ -171,7 +173,7 @@ else
 fi
 
 # Ignore certain commands from history
-if [[ -n "${HIST_IGNORE_COMMANDS}" ]]; 
+if [[ -n "${HIST_IGNORE_COMMANDS}" ]];
 then
     # Hook function to exclude commands from history
     zshaddhistory() {
@@ -189,7 +191,7 @@ then
 fi
 
 # Ranger file browser
-if [[ $(isInstalled ranger) = "true" ]]; 
+if [[ $(isInstalled ranger) = "true" ]];
 then
     alias rr=' ranger'
 fi
