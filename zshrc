@@ -42,7 +42,7 @@ bindkey '^[[6~' down-line-or-history
 bindkey '^[[A' up-line-or-search
 bindkey '^[[D' backward-char
 bindkey '^[[B' down-line-or-search
-bindkey '^[[C' forward-char 
+bindkey '^[[C' forward-char
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
@@ -51,7 +51,7 @@ alias sudo='sudo '
 alias watch='watch '
 
 # zsudo helper function to run functions loaded in this file as root
-function zsudo() { 
+function zsudo() {
     sudo zsh -c "$functions[$1]" "$@"
 }
 
