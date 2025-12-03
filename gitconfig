@@ -9,6 +9,11 @@
     defaultBranch = master
 [pull]
     rebase = true
+[push]
+    default = current
+    autoSetupRemote = true
 [rebase]
     autoStash = true
+[advice]
+    skippedCherryPicks = false
 [alias]
