@@ -197,7 +197,8 @@ then
 fi
 
 # Antibody plugin manager
-if [[ -f ~/.zsh_plugins.zsh ]];
+plugins_dir="${HOME}/.zsh_plugins.sh"
+if [[ -f $plugins_dir ]];
 then
     local use_autosuggestions="true"
     if [[ $use_autosuggestions = "true" ]];
@@ -214,9 +215,14 @@ then
         # ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20 # 20 recommended
         # ZSH_AUTOSUGGEST_HISTORY_IGNORE="cd *"
         # ZSH_AUTOSUGGEST_COMPLETION_IGNORE="cd *"
+    else
+        logDebug "Not applying autosuggestions use_autosuggestions=${use_autosuggestions}"
     fi
-    source ~/.zsh_plugins.zsh
+    source $plugins_dir
+else
+    logDebug "Not applying autosuggestions as ${plugins_dir} does not exist"
 fi
+unset plugins_dir
 
 # Cleanup
 unfunction isInstalled
